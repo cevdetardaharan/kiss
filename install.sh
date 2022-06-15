@@ -45,6 +45,9 @@ cd /var/db/kiss/installed && kiss build *
 kiss b e2fsprogs
 kiss b dosfstools
 
+# compression
+kiss b lz4
+
 # /var/db/kiss
 curl -FLO https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.15.47.tar.xz
 tar xvf linux-5.15.47.tar.xz
@@ -91,4 +94,4 @@ kiss b hack
 kiss b sway-tiny/wlroots foot-pgo grim slurp wl-clipboard wf-recorder wlsunset
 
 # apps
-kiss b htop pfetch mpv firefox rust neovim spotifyd transmission
+kiss b htop pfetch mpv firefox-privacy rust neovim spotifyd transmission
