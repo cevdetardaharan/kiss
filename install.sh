@@ -40,3 +40,12 @@ export MAKEFLAGS="-j4"
 # update system
 kiss update
 cd /var/db/kiss/installed && kiss build *
+
+# install filesystem utilities
+kiss b e2fsprogs
+kiss b dosfstools
+
+# install efistub
+kiss b efibootmgr
+mount -t efivarfs none /sys/firmware/efi/efivars/
+efibootmgr -c -d /dev/sda -p 1 -L "kiss" -l /vmlinuz-5.15.46-gnu -u "root=PARTUUID={UID} console=tty1 loglevel=0 initcall_debug tsc=reliable rootfstype=ext4"
